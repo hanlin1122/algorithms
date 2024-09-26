@@ -17,20 +17,6 @@ class Main {
     
     return collatedArray;
   }
-  public static void testCode1(){
-    int[] a = {1,4,7};
-    int[] b = {2,5,8};
-    int[] c = {3,6,9};
-    int[] ans = collate3(a, b, c);
-    int[] correct = {1,2,3,4,5,6,7,8,9};
-    boolean allElementsMatch = true;
-    for(int i=0; i<correct.length; i++)
-      allElementsMatch &= ans[i] == correct[i];
-    if(allElementsMatch)
-      System.out.println("Part 1 works!!!");
-    else
-      System.out.println("Part 1 back to the drawing board");
-  }
   
   public static int[] collate2(int[] a, int[] b){
     if (a == null && b != null) {
@@ -59,20 +45,6 @@ class Main {
     }
 
     return collatedArray;
-  }
-  
-  public static void testCode2(){
-    int[] a = {1,2,3};
-    int[] b = {4};
-    int[] ans = collate2(a, b);
-    int[] correct = {1,4,2,3};
-    boolean allElementsMatch = true;
-    for(int i=0; i<correct.length; i++)
-      allElementsMatch &= ans[i] == correct[i];
-    if(allElementsMatch)
-      System.out.println("Part 2 works!!!");
-    else
-      System.out.println("Part 2 back to the drawing board");
   }
   
   public static int[] merge(int[] a, int[] b) {
@@ -117,18 +89,6 @@ class Main {
     return p;    
   }
   
-  public static void testCode3(){
-    int[] a = {1,3,4,8}, b = {2,5,6,7,8};
-  int ans[] = merge(a, b);
-  int[] correct = {1, 2, 3, 4, 5, 6, 7, 8, 8};
-    boolean allElementsMatch = true;
-    for(int i=0; i<correct.length; i++)
-      allElementsMatch &= ans[i] == correct[i];
-    if(allElementsMatch)
-      System.out.println("Part 3 works!!!");
-    else
-      System.out.println("Part 3 back to the drawing board");
-  }
   public static int smallestIndex1(int[] a) {
     int ans = 0;
     int t = Integer.MAX_VALUE;
@@ -140,18 +100,6 @@ class Main {
     }
 
     return ans;
-  }
-  
-  public static void testCode4a(){
-    int[] a = {5, 4,1, 2, 3};
-    int t = smallestIndex1(a);
-    int correct = 2;
-    if (t == correct) {
-      System.out.println("Part 4 works!!!");
-    }
-    else {
-      System.out.println("Wrong");
-    }
   }
   
   public static int smallestIndex(int[] a, int p) {
@@ -166,15 +114,7 @@ class Main {
 
     return ans;
   }
-  public static void testCode4c(){
-    int[] a = {3, 4, 5, 6, 7, 3, 9};
-    int t = smallestIndex(a, 4);
-    int correct = 5;
-    if (t == correct) {
-      System.out.println("Part 4c works!!!");
-    }
-  }
-
+ 
   public static void sSort(int[] a) {
     for (int x = 0; x < a.length; x++) {
       int ans = 0;
@@ -183,25 +123,6 @@ class Main {
       a[x] = a[t];
       a[t] = temp;
     }
-  }
-
-  public static void testCode5a(){
-    int[] a = {1,3,4,8,5,7,6,2};
-    sSort(a);
-    int[] correct = {1, 2, 3, 4, 5, 6, 7, 8};
-    Boolean checker = true;
-    for (int x = 0; x < a.length; x++) {
-      if (a[x] != correct[x]) {
-        checker = false;
-      }
-    }
-    if (checker) {
-      System.out.println("Part 5a works!!!");
-    }
-    else {
-      System.out.println("Wrong");
-    }
-  
   }
   
   public static void selectionSort(int[] a) {
@@ -219,26 +140,6 @@ class Main {
       a[ans] = temp;
     }
 
-  }
-
-  public static void testCode5c(){
-    // Test a = {1,3,4,8,5,7,6,2}
-    int[] a = {1,3,4,8,5,7,6,2};
-    selectionSort(a);
-    int[] correct = {1, 2, 3, 4, 5, 6, 7, 8};
-    Boolean checker = true;
-    for (int x = 0; x < a.length; x++) {
-      if (a[x] != correct[x]) {
-        checker = false;
-      }
-    }
-    if (checker) {
-      System.out.println("Part 5c works!!!");
-    }
-    else {
-      System.out.println("Wrong");
-    }
-  
   }
   
   public static void main(String[] args) {
